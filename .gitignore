@@ -3,10 +3,12 @@
 *.war
 *.ear
 *.iml
-.gradle
-.idea
 *.MP4
 *.bat
 gradlew
-build/
-gradle/
+
+
+.gradle
+.idea
+build
+gradle
