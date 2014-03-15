@@ -6,6 +6,7 @@
 *.MP4
 *.bat
 gradlew
+gradlew.bat
 
 
 .gradle
