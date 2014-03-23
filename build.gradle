@@ -1,29 +1,38 @@
+// Project: 
+version = '0.1'
+
+// Java components
 apply plugin: 'java'
+
+// IDE support
+apply plugin: 'idea'
+
+// Run support
 apply plugin:'application'
 
-version = '1.0'
-mainClassName = "fr.xebia.bumblebee.BgSub"
+// Language support
+sourceCompatibility = 1.8
 
+// Repositories
 repositories {
     mavenCentral()
 }
 
-jar {
-    baseName = 'bumblebee'
-    version =  '0.0.1'
-}
-
-task wrapper(type: Wrapper) {
-    gradleVersion = '1.11'
-}
-
+// External dependencies
 dependencies {
-    compile fileTree(dir: 'libs', include: '*.jar')
-    testCompile group: 'junit', name: 'junit', version: '4.11'
+    // OpenCV bindings
+    compile fileTree(dir: 'lib/javacv-bin', include: '*.jar')
+
+    // Google collections (Guava)
+    compile group: 'com.google.guava', name: 'guava', version: '16.0.1'
+
+    // Logging
+    compile([group: 'org.slf4j', name: 'slf4j-api', version: '1.7.5'], 
+            [group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.5'])
+
+    // Junit
+    testCompile group: 'junit', name: 'junit', version: '4.+'
 }
 
-run {
-    if(project.hasProperty('args')){
-        args project.args.split('\\s+')
-    }
-}
+// Location of main (for running)
+mainClassName = "fr.xebia.bumblebee.CameraTest"
