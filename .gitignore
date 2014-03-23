@@ -3,8 +3,11 @@
 *.war
 *.ear
 *.iml
+*.iws
 *.MP4
 *.bat
+*.mov
+*.wav
 gradlew
 gradlew.bat
 
