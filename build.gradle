@@ -40,7 +40,7 @@ def resDir = "src/main/resources/";
 filesToDownload.each() { fileName, url ->
     def filePath = resDir + fileName
     File file = new File(filePath);
-    if (!file.isFile()) {
+    if (!file.exists()) {
         task "downloading $fileName" << {
             download {
                 src url
